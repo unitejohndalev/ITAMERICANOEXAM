@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AddForm = ({ todo, onAddInputChange, onAddFormSubmit }) => {
   return (
     <div className="flex items-center justify-center w-full">
-      <form onSubmit={onAddFormSubmit} className="mt-[150px] w-[400px] md:w-[600px]">
+      <form onSubmit={onAddFormSubmit} className="mt-5 w-[400px] md:w-[600px]">
         
         <div className="flex flex-col w-full">
 

@@ -10,7 +10,7 @@ const TodoComments = lazy(() => import("./components/TodoComments"));
 function App() {
   return (
     <>
-      <h1 className="text-[2rem] text-center font-light mt-5">
+      <h1 className="text-[2rem] text-center font-light py-10">
         IT AMERICANO FRONT-END DEVELOPER EXAMINATION
       </h1>
       <Suspense fallback={`......Loading`}>

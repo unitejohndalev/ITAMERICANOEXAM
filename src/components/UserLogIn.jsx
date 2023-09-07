@@ -90,7 +90,7 @@ const UserLogIn = () => {
 
   return (
     <div className="flex justify-center w-full">
-      <div className=" mt-[100px] w-[600px] ">
+      <div className=" mt-5 w-[600px] ">
         <div className="">
           {isSubmitted ? (
          <></>
