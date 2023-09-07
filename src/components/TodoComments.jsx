@@ -16,21 +16,13 @@ const TodoComments = () => {
   const { text } = allTodoComments;
   console.log(text);
 
-  const [comments, setComments] = useState(() => {
-    const getComments = localStorage.getItem("comments");
-    if (getComments) {
-      return JSON.parse(getComments);
-    }
-    return [];
-  });
+  const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [currentComment, setCurrentComment] = useState({});
   //edit state
   const [isEditing, setIsEditing] = useState(false);
 
-  useEffect(() => {
-    localStorage.setItem("comments", JSON.stringify(comments));
-  }, [comments]);
+
 
   const submitComment = (e) => {
     e.preventDefault();
