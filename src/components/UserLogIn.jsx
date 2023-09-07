@@ -93,13 +93,7 @@ const UserLogIn = () => {
       <div className=" mt-[100px] w-[600px] ">
         <div className="">
           {isSubmitted ? (
-            <p className="text-[1rem] text-end">
-              <Link
-                to={"/"}
-                className="px-6 py-2 text-white bg-red-500 rounded-sm ">
-                Log Out
-              </Link>
-            </p>
+         <></>
           ) : (
             <div className="flex flex-col text-center gap-y-5">
               <div>
@@ -116,6 +110,7 @@ const UserLogIn = () => {
         </div>
         {isSubmitted ? (
           <div>
+       
             <TodoList />
           </div>
         ) : (

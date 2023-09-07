@@ -1,18 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState,useContext } from "react";
 
 import EditForm from "./EditForm";
 import AddForm from "./AddForm";
 import TodoItem from "./TodoItem";
 
+
+import { TodoContext } from "../context/TodoContext";
+
 const TodoList = () => {
-  //get list in local storage store in in todos state
-  const [todos, setTodos] = useState(() => {
-    const saveTodos = localStorage.getItem("todos");
-    if (saveTodos) {
-      return JSON.parse(saveTodos);
-    }
-    return [];
-  });
+  const {todos, setTodos} = useContext(TodoContext)
+
+
   // input state
   const [todo, setTodo] = useState("");
 
@@ -22,10 +20,7 @@ const TodoList = () => {
   // current state
   const [currentTodo, setCurrentTodo] = useState({});
 
-  //put todos in localstorage
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]); //set todos as depencies since it changes data
+
 
   //input onChange function
   const handleAddInputChange = (e) => {
@@ -51,7 +46,7 @@ const TodoList = () => {
   //edit input function
   const handleEditInputChange = (e) => {
     setCurrentTodo({ ...currentTodo, text: e.target.value });
-    console.log(currentTodo);
+  
   };
 
   //edit submit function
@@ -104,6 +99,7 @@ const TodoList = () => {
         onEditClick={handleEditClick}
         onDeleteClick={handleDeleteClick}
       />
+   
     </div>
   );
 };
